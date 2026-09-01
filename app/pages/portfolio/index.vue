@@ -2,9 +2,8 @@
   <main id="top">
     <PortfolioConcept />
     <PortfolioCaseGrid />
-    <!--for in case[]-->
-    <!-- <Benefits />
-    <LeadCard /> -->
+    <PortfolioBenefits />
+    <PortfolioLeadCard />
   </main>
 </template>
 

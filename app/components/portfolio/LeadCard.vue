@@ -21,7 +21,7 @@
             </div>
           </div>
         </div>
-        <form class="lead-form" data-concept-form>
+        <form class="p_lead-form" data-concept-form>
           <div class="field">
             <label>Имя</label
             ><input
@@ -83,3 +83,56 @@
     </div>
   </section>
 </template>
+
+<style scoped>
+.lead-section {
+  padding: 24px 0 96px;
+}
+
+.lead-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  background: linear-gradient(140deg, #102945 0%, #071a31 72%);
+  border: 1px solid rgba(22, 168, 224, 0.32);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.22);
+}
+
+.lead-copy {
+  padding: 54px;
+  border-right: 1px solid var(--line);
+}
+
+.lead-copy h2 {
+  font-size: clamp(2rem, 3.7vw, 3.4rem);
+  line-height: 1.08;
+  margin: 0.28em 0;
+}
+
+.lead-copy p {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.lead-steps {
+  display: grid;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.lead-step {
+  display: flex;
+  gap: 12px;
+  color: var(--muted);
+}
+
+.lead-step b {
+  color: var(--accent);
+}
+
+.p_lead-form {
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+</style>
