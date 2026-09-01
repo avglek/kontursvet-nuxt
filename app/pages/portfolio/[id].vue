@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>id: {{ id }}</h2>
+    <PortfolioCaseCardView :id="id" />
   </div>
 </template>
 

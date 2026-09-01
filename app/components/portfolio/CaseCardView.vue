@@ -1,40 +1,28 @@
 <template>
-  <section class="section concept-case" id="case-01">
+  <section class="section concept-case" :id="id">
     <div class="shell">
       <div class="case-heading">
         <div>
-          <div class="eyebrow">Кейс 01</div>
-          <h2>Световое оформление двух домов в Гатчине</h2>
+          <div class="eyebrow">{{ caseId }}</div>
+          <h2>{{ title }}</h2>
         </div>
         <a href="#cases">К списку ↑</a>
       </div>
       <p class="section-intro">
-        В Гатчине команда оформила два частных дома в единой световой
-        стилистике. На большом доме смонтировали по 100 м гирлянды «бахрома» и
-        flex neon, а также 12 мотивов «Полярис». Для малого дома использовали по
-        24 м бахромы и flex neon, пять снежинок диаметром 70 см и четыре мотива
-        «Полярис». Монтаж выполнила бригада из шести человек за два дня в
-        октябре. Работы проходили по стандартному сценарию без дополнительных
-        технических сложностей.
+        {{ description }}
       </p>
       <div class="facts-wrap">
         <div class="facts-task">
           <strong>Задача заказчика</strong>
           <p>
-            Оформить два дома в едином стиле: использовать гирлянду «бахрома»,
-            flex neon и световые мотивы.
+            {{ task }}
           </p>
         </div>
         <div class="facts-grid">
           <div class="fact fact-wide">
             <span class="fact-label">Объём работ</span>
             <ul>
-              <li>Большой дом: 100 м бахромы и 100 м flex neon</li>
-              <li>Большой дом: 12 световых мотивов «Полярис»</li>
-              <li>Маленький дом: 24 м бахромы и 24 м flex neon</li>
-              <li>
-                Маленький дом: 5 снежинок диаметром 70 см и 4 мотива «Полярис»
-              </li>
+              <li v-for="work in workList">{{ work }}</li>
             </ul>
           </div>
           <div class="fact">
@@ -103,6 +91,26 @@
   </section>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+defineProps({
+  id: Number,
+});
+
+interface ICardView {
+  id: String;
+  caseId: String;
+  title: String;
+  description: String;
+  task: String;
+  workList: [];
+  location: String;
+  term: String;
+  team: String;
+  period: String;
+  features: String;
+  metaList: [];
+  photos: [];
+}
+</script>
 
 <style></style>
