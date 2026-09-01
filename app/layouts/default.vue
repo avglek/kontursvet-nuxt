@@ -2,7 +2,7 @@
   <div>
     <Header />
     <slot />
-    <Futter />
+    <Footer />
   </div>
 </template>
 
