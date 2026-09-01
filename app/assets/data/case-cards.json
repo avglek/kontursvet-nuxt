@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "link": "#case-01",
+    "title": "Кейс 01 · Гатчина",
+    "subTitle": "Два дома в Гатчине",
+    "description": "контурная подсветка flex neon, монтаж гирлянды «бахрома» и световых мотивов",
+    "img": {
+      "src": "/_nuxt/assets/img/portfolio/gatchina/01.webp",
+      "alt": "Два дома в Гатчине"
+    }
+  },
+  {
+    "id": 2,
+    "link": "#case-02",
+    "title": "Кейс 02 · деревня Васкелово",
+    "subTitle": "Усадьба в Васкелово",
+    "description": "монтаж гирлянды «бахрома» и световое оформление деревьев",
+    "img": {
+      "src": "/_nuxt/assets/img/portfolio/vaskelovo/01.webp",
+      "alt": "Усадьба в Васкелово"
+    }
+  },
+  {
+    "id": 3,
+    "link": "#case-03",
+    "title": "Кейс 03 · Всеволожск, деревня Старая Пустошь",
+    "subTitle": "Дом и зона отдыха во Всеволожске",
+    "description": "контурная подсветка flex neon, монтаж гирлянды «бахрома» и световых растяжек",
+    "img": {
+      "src": "/_nuxt/assets/img/portfolio/vsevologhks/01.webp",
+      "alt": "Дом и зона отдыха во Всеволожске"
+    }
+  },
+  {
+    "id": 4,
+    "link": "#case-04",
+    "title": "Кейс 04 · КП «Лиоколла Клаб»",
+    "subTitle": "Дом в Лиоколла Клаб",
+    "description": "контурная подсветка flex neon и монтаж гирлянды «бахрома»",
+    "img": {
+      "src": "/_nuxt/assets/img/portfolio/likolla/01.webp",
+      "alt": "Дом в Лиоколла Клаб"
+    }
+  },
+  {
+    "id": 5,
+    "link": "#case-05",
+    "title": "Кейс 05 · Васкелово",
+    "subTitle": "Дом в Васкелово",
+    "description": "контурная подсветка flex neon и монтаж гирлянды «бахрома»",
+    "img": {
+      "src": "/_nuxt/assets/img/portfolio/vaskelovo_2/01.webp",
+      "alt": "Дом в Васкелово"
+    }
+  },
+  {
+    "id": 6,
+    "link": "#case-06",
+    "title": "Кейс 06 · Санкт-Петербург, Мельничная улица, 8Л",
+    "subTitle": "Бизнес-центр Premium",
+    "description": "монтаж гирлянды «бахрома» и оформление световой пирамиды гирляндой-нитью",
+    "img": {
+      "src": "/_nuxt/assets/img/portfolio/bisness_premium_spb/01.webp",
+      "alt": "Бизнес-центр Premium"
+    }
+  },
+  {
+    "id": 7,
+    "link": "#case-07",
+    "title": "Кейс 07 · Репино",
+    "subTitle": "Частный дом в Репино",
+    "description": "контурная подсветка flex neon",
+    "img": {
+      "src": "/_nuxt/assets/img/portfolio/repino/01.webp",
+      "alt": "Частный дом в Репино"
+    }
+  }
+]

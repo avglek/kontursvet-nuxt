@@ -23,7 +23,7 @@
         ><NuxtLink to="/#cases">Кейсы</NuxtLink
         ><NuxtLink to="/#process">Как работаем</NuxtLink
         ><NuxtLink to="/#contact">Контакты</NuxtLink>
-        <NuxtLink class="portfolio-nav-link" to="/portfolio"
+        <NuxtLink no-prefetch class="portfolio-nav-link" to="/portfolio"
           >Портфолио
           <!-- <span aria-hidden="true">↗</span> -->
         </NuxtLink>
