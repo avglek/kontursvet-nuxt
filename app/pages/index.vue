@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h2>Home</h2>
-    <a href="/profile">Profile</a>
+    <HomeMain />
   </div>
 </template>
 
