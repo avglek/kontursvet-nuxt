@@ -22,19 +22,8 @@
   </section>
 </template>
 <script setup lang="ts">
-interface ICard {
-  id: number;
-  link: string;
-  title: string;
-  subTitle: string;
-  description: string;
-  img: {
-    src: string;
-    alt: string;
-  };
-}
-
 import rawData from "@/assets/data/case-cards.json";
+import type { ICard } from "~/shared/types/CardView";
 
 const cards = rawData as ICard[];
 </script>

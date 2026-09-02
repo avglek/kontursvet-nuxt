@@ -92,25 +92,16 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
+import rawData from "@/assets/data/cards-view.json";
+import type { ICardView } from "~/shared/types/CardView";
+
+const id = defineProps({
   id: Number,
 });
 
-interface ICardView {
-  id: String;
-  caseId: String;
-  title: String;
-  description: String;
-  task: String;
-  workList: [];
-  location: String;
-  term: String;
-  team: String;
-  period: String;
-  features: String;
-  metaList: [];
-  photos: [];
-}
+const cardViews = rawData as ICardView[];
+
+console.log("id:", id);
 </script>
 
 <style></style>

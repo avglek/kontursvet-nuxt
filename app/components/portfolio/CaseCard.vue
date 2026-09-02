@@ -11,20 +11,13 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
-  id: Number,
-  title: String,
-  link: String,
-  subTitle: String,
-  description: String,
-  img: {
-    src: String,
-    alt: String,
-  },
-});
+import { type ICard } from "~/shared/types/CardView";
+
+const props: ICard = defineProps<ICard>();
+
 const router = useRouter();
 
-const openCase = (id) => {
+const openCase = (id: number) => {
   router.push("/portfolio/" + id);
 };
 </script>
