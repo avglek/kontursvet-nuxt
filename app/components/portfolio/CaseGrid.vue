@@ -29,13 +29,13 @@ interface ICard {
   subTitle: string;
   description: string;
   img: {
-    scr: string;
+    src: string;
     alt: string;
   };
 }
 
-import cartsData from "@/assets/data/case-cards.json";
+import rawData from "@/assets/data/case-cards.json";
 
-const cards = ref(cartsData);
+const cards = rawData as ICard[];
 </script>
 <style></style>
