@@ -31,7 +31,7 @@
       </div>
       <div class="hero-media">
         <img
-          src="/img/home/hero.png"
+          src="/img/home/hero_02.webp"
           alt="Дом с контурной подсветкой и световым оформлением кровли"
         /><span class="image-label">Реальный объект · кровля и фасад</span>
       </div>

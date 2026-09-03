@@ -18,11 +18,9 @@
         class="nav-links"
         aria-label="Основная навигация"
       >
-        <NuxtLink to="/#projects">Проекты</NuxtLink
-        ><NuxtLink to="/#solutions">Решения</NuxtLink
-        ><NuxtLink to="/#cases">Кейсы</NuxtLink
-        ><NuxtLink to="/#process">Как работаем</NuxtLink
-        ><NuxtLink to="/#contact">Контакты</NuxtLink>
+        <a href="/#projects">Проекты</a><a href="/#solutions">Решения</a
+        ><a href="/#cases">Кейсы</a><a href="/#process">Как работаем</a
+        ><a href="/#contact">Контакты</a>
         <NuxtLink no-prefetch class="portfolio-nav-link" to="/portfolio"
           >Портфолио
           <!-- <span aria-hidden="true">↗</span> -->
