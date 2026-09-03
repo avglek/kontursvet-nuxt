@@ -27,5 +27,5 @@ services:
         max_attempts: 3
         window: 120s
     ports:
-      - "3000:3000"
+      - "7000:3000"
     restart: always

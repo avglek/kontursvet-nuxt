@@ -2,7 +2,7 @@
   <header class="site-header">
     <div class="container nav-row">
       <a class="brand" href="#top" aria-label="КонтурСвет — на главную"
-        ><img src="@/assets/img/icon.png" alt="КонтурСвет — Архитектура света"
+        ><img src="/img/icon.png" alt="КонтурСвет — Архитектура света"
       /></a>
       <button
         class="mobile-toggle"

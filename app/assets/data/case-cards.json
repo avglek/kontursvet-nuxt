@@ -6,7 +6,7 @@
     "subTitle": "Два дома в Гатчине",
     "description": "контурная подсветка flex neon, монтаж гирлянды «бахрома» и световых мотивов",
     "img": {
-      "src": "/_nuxt/assets/img/portfolio/gatchina/01.webp",
+      "src": "/img/portfolio/gatchina/01.webp",
       "alt": "Два дома в Гатчине"
     }
   },
@@ -17,7 +17,7 @@
     "subTitle": "Усадьба в Васкелово",
     "description": "монтаж гирлянды «бахрома» и световое оформление деревьев",
     "img": {
-      "src": "/_nuxt/assets/img/portfolio/vaskelovo/01.webp",
+      "src": "/img/portfolio/vaskelovo/01.webp",
       "alt": "Усадьба в Васкелово"
     }
   },
@@ -28,7 +28,7 @@
     "subTitle": "Дом и зона отдыха во Всеволожске",
     "description": "контурная подсветка flex neon, монтаж гирлянды «бахрома» и световых растяжек",
     "img": {
-      "src": "/_nuxt/assets/img/portfolio/vsevologhks/01.webp",
+      "src": "/img/portfolio/vsevologhks/01.webp",
       "alt": "Дом и зона отдыха во Всеволожске"
     }
   },
@@ -39,7 +39,7 @@
     "subTitle": "Дом в Лиоколла Клаб",
     "description": "контурная подсветка flex neon и монтаж гирлянды «бахрома»",
     "img": {
-      "src": "/_nuxt/assets/img/portfolio/likolla/01.webp",
+      "src": "/img/portfolio/likolla/01.webp",
       "alt": "Дом в Лиоколла Клаб"
     }
   },
@@ -50,7 +50,7 @@
     "subTitle": "Дом в Васкелово",
     "description": "контурная подсветка flex neon и монтаж гирлянды «бахрома»",
     "img": {
-      "src": "/_nuxt/assets/img/portfolio/vaskelovo_2/01.webp",
+      "src": "/img/portfolio/vaskelovo_2/01.webp",
       "alt": "Дом в Васкелово"
     }
   },
@@ -61,7 +61,7 @@
     "subTitle": "Бизнес-центр Premium",
     "description": "монтаж гирлянды «бахрома» и оформление световой пирамиды гирляндой-нитью",
     "img": {
-      "src": "/_nuxt/assets/img/portfolio/bisness_premium_spb/01.webp",
+      "src": "/img/portfolio/bisness_premium_spb/01.webp",
       "alt": "Бизнес-центр Premium"
     }
   },
@@ -72,7 +72,7 @@
     "subTitle": "Частный дом в Репино",
     "description": "контурная подсветка flex neon",
     "img": {
-      "src": "/_nuxt/assets/img/portfolio/repino/01.webp",
+      "src": "/img/portfolio/repino/01.webp",
       "alt": "Частный дом в Репино"
     }
   }

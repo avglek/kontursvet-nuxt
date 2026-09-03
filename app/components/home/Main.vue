@@ -31,7 +31,7 @@
       </div>
       <div class="hero-media">
         <img
-          src="@/assets/img/home/hero.png"
+          src="/img/home/hero.png"
           alt="Дом с контурной подсветкой и световым оформлением кровли"
         /><span class="image-label">Реальный объект · кровля и фасад</span>
       </div>
@@ -74,7 +74,7 @@
         <div class="project-grid">
           <article class="project-card project-card-featured">
             <img
-              src="@/assets/img/home/001.webp"
+              src="/img/home/001.webp"
               alt="Световое оформление, Гатчина"
               style="object-position: 50% 48%"
             />
@@ -86,7 +86,7 @@
           </article>
           <article class="project-card">
             <img
-              src="@/assets/img/home/002.webp"
+              src="/img/home/002.webp"
               alt="Световое оформление, Васкелово"
               style="object-position: 50% 50%"
             />
@@ -97,7 +97,7 @@
           </article>
           <article class="project-card">
             <img
-              src="@/assets/img/home/003.webp"
+              src="/img/home/003.webp"
               alt="Световое оформление, Репино"
               style="object-position: 50% 42%"
             />
@@ -109,7 +109,7 @@
           </article>
           <article class="project-card">
             <img
-              src="@/assets/img/home/004.webp"
+              src="/img/home/004.webp"
               alt="Световое оформление, Всеволожск"
               style="object-position: 50% 46%"
             />
@@ -121,7 +121,7 @@
           </article>
           <article class="project-card">
             <img
-              src="@/assets/img/home/005.webp"
+              src="/img/home/005.webp"
               alt="Световое оформление, Flex neon"
               style="object-position: 50% 50%"
             />
@@ -155,7 +155,7 @@
       <div class="container composition-card">
         <div class="composition-photo">
           <img
-            src="@/assets/img/home/006.webp"
+            src="/img/home/006.webp"
             alt="Дом с оформленной кровлей, фасадом и террасой"
           /><span class="photo-pin pin-roof">Кровля</span
           ><span class="photo-pin pin-facade">Фасад</span
@@ -212,7 +212,7 @@
           <article class="service-card">
             <div class="service-media">
               <img
-                src="@/assets/img/home/007.webp"
+                src="/img/home/007.webp"
                 alt="Контурная подсветка flex neon"
                 style="object-position: 50% 44%"
               />
@@ -232,7 +232,7 @@
           <article class="service-card">
             <div class="service-media">
               <img
-                src="@/assets/img/home/008.webp"
+                src="/img/home/008.webp"
                 alt="Гирлянда «бахрома»"
                 style="object-position: 50% 48%"
               />
@@ -252,7 +252,7 @@
           <article class="service-card">
             <div class="service-media">
               <img
-                src="@/assets/img/home/009.webp"
+                src="/img/home/009.webp"
                 alt="Световое оформление деревьев"
                 style="object-position: 50% 55%"
               />
@@ -272,7 +272,7 @@
           <article class="service-card">
             <div class="service-media">
               <img
-                src="@/assets/img/home/010.webp"
+                src="/img/home/010.webp"
                 alt="Комплексное оформление"
                 style="object-position: 50% 50%"
               />
@@ -311,7 +311,7 @@
             <div class="upload-preview">
               <img
                 id="uploaded-photo"
-                src="@/assets/img/home/11.webp"
+                src="/img/home/11.webp"
                 alt="Пример фотографии объекта"
               /><button type="button" id="choose-photo">Выбрать фото</button>
             </div>
@@ -348,7 +348,7 @@
             <div class="result-preview">
               <img
                 id="concept-result"
-                src="@/assets/img/home/ps-01.webp"
+                src="/img/home/ps-01.webp"
                 alt="Демонстрационный вариант светового оформления"
               />
               <div class="result-status">Демо на примере из портфолио</div>
@@ -362,17 +362,17 @@
         <img
           class="preview-source"
           data-preview-mode="flex"
-          src="@/assets/img/home/ps-01.webp"
+          src="/img/home/ps-01.webp"
           alt=""
         /><img
           class="preview-source"
           data-preview-mode="fringe"
-          src="@/assets/img/home/ps-02.webp"
+          src="/img/home/ps-02.webp"
           alt=""
         /><img
           class="preview-source"
           data-preview-mode="complex"
-          src="@/assets/img/home/ps-03.webp"
+          src="/img/home/ps-03.webp"
           alt=""
         />
         <div class="lead-panel">
@@ -476,10 +476,7 @@
         <div class="cases-grid">
           <article class="case-card">
             <div class="case-photo">
-              <img
-                src="@/assets/img/home/13.webp"
-                alt="Кейс КонтурСвет: Гатчина"
-              />
+              <img src="/img/home/13.webp" alt="Кейс КонтурСвет: Гатчина" />
             </div>
             <div class="case-body">
               <div class="eyebrow">Гатчина</div>
@@ -503,10 +500,7 @@
           </article>
           <article class="case-card">
             <div class="case-photo">
-              <img
-                src="@/assets/img/home/14.webp"
-                alt="Кейс КонтурСвет: Васкелово"
-              />
+              <img src="/img/home/14.webp" alt="Кейс КонтурСвет: Васкелово" />
             </div>
             <div class="case-body">
               <div class="eyebrow">Васкелово</div>
