@@ -6,7 +6,7 @@
           <div class="eyebrow">{{ card?.case }}</div>
           <h2>{{ card?.title }}</h2>
         </div>
-        <NuxtLink to="/portfolio">К списку ↑</NuxtLink>
+        <NuxtLink :to="'/portfolio/#' + card?.name">К списку ↑</NuxtLink>
       </div>
       <p class="section-intro">
         {{ card?.description }}
@@ -60,7 +60,9 @@
           <figcaption>{{ photo.figcaption }}</figcaption>
         </figure>
       </div>
-      <NuxtLink class="link" to="/portfolio">К списку ↑</NuxtLink>
+      <NuxtLink class="link" :to="'/portfolio/#' + card?.name"
+        >К списку ↑</NuxtLink
+      >
     </div>
   </section>
 </template>
