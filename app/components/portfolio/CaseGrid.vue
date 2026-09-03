@@ -7,16 +7,7 @@
         Откройте любой кейс, чтобы посмотреть всю отобранную серию.
       </p>
       <div class="cards">
-        <PortfolioCaseCard
-          v-for="card in cards"
-          :key="card.id"
-          :id="card.id"
-          :title="card.title"
-          :link="card.link"
-          :subTitle="card.subTitle"
-          :description="card.description"
-          :img="card.img"
-        />
+        <PortfolioCaseCard v-for="card in cards" :key="card.id" :card="card" />
       </div>
     </div>
   </section>
@@ -25,6 +16,6 @@
 import rawData from "@/assets/data/case-cards.json";
 import type { ICard } from "~/shared/types/CardView";
 
-const cards = rawData as ICard[];
+const cards: ICard[] = rawData as ICard[];
 </script>
 <style></style>

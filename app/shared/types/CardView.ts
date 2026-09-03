@@ -12,7 +12,7 @@ export interface ICardView {
   period: string;
   features: string;
   meta: string[];
-  photos?: string[];
+  photos?: IGallery[];
 }
 
 export interface ICard {
