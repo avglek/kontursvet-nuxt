@@ -229,6 +229,7 @@ const clearForm = () => {
   form.phone = '';
 
   if (fileInput.value) {
+    // @ts-ignore
     fileInput.value.value = '';
   }
   selectedFile = [];
