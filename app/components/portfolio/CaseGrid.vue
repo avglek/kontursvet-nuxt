@@ -13,8 +13,8 @@
   </section>
 </template>
 <script setup lang="ts">
-import rawData from "@/assets/data/case-cards.json";
-import type { ICard } from "~/shared/types/CardView";
+import rawData from '@/assets/data/case-cards.json';
+import type { ICard } from '~/types/CardView';
 
 const cards: ICard[] = rawData as ICard[];
 </script>

@@ -15,7 +15,7 @@
           область
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#try"
+          <a class="button button-primary" href="/portfolio#request"
             >Отправить фото для оценки <span aria-hidden="true">→</span></a
           ><a class="button button-ghost" href="#projects"
             >Смотреть проекты <span aria-hidden="true">↓</span></a
@@ -84,6 +84,7 @@
               ><span>Два дома · flex neon · бахрома · световые мотивы</span>
             </div>
           </article>
+
           <article class="project-card">
             <img
               src="/img/home/002.webp"
@@ -132,7 +133,7 @@
             </div>
           </article>
         </div>
-        <a class="portfolio-entry" href="#portfolio" data-open-portfolio>
+        <a class="portfolio-entry" href="/portfolio" data-open-portfolio>
           <div class="portfolio-entry-copy">
             <span class="eyebrow">Полное онлайн-портфолио</span>
             <h3>Смотрите проекты подробно</h3>
@@ -587,7 +588,7 @@
           </div>
         </div>
         <div class="final-actions">
-          <a href="#try" class="button button-primary"
+          <a href="/portfolio#request" class="button button-primary"
             >Отправить фото для оценки →</a
           ><a href="tel:+79650473553" class="button button-ghost"
             >Позвонить Александру</a

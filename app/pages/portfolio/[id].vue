@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 const route = useRoute();
 
-const id = route.params.id;
+const id = Number.parseInt(route.params.id as string);
 </script>
 
 <style></style>

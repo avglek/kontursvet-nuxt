@@ -25,7 +25,7 @@
           >Портфолио
           <!-- <span aria-hidden="true">↗</span> -->
         </NuxtLink>
-        <a class="button button-small button-ghost" href="#try"
+        <a class="button button-small button-ghost" href="/portfolio#request"
           >Отправить фото</a
         >
       </nav>
@@ -34,5 +34,5 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
+import { RouterLink } from 'vue-router';
 </script>

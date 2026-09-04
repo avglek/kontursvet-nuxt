@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { type ICard } from "~/shared/types/CardView";
+import { type ICard } from '~/types/CardView';
 
 const props = defineProps<{ card: ICard }>();
 const card = props.card;
@@ -21,7 +21,7 @@ const card = props.card;
 const router = useRouter();
 
 const openCase = (id: number) => {
-  router.push("/portfolio/" + id);
+  router.push('/portfolio/' + id);
 };
 </script>
 

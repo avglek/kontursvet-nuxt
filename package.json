@@ -13,10 +13,14 @@
   },
   "dependencies": {
     "nuxt": "^4.5.2",
+    "nuxt-email-renderer": "^2.11.1",
+    "resend": "^6.26.0",
     "vue": "^3.5.41",
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
+    "nodemailer": "^7.0.13",
+    "nuxt-nodemailer": "^1.1.4",
     "typescript": "^7.0.2",
     "vue-tsc": "^3.3.11"
   },

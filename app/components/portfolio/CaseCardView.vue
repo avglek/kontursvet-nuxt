@@ -68,9 +68,9 @@
 </template>
 
 <script lang="ts" setup>
-import rawData from "@/assets/data/cards-view.json";
-import rawPhotos from "~/assets/data/photo-view.json";
-import { type ICardView, type IPhoto } from "~/shared/types/CardView";
+import rawData from '@/assets/data/cards-view.json';
+import rawPhotos from '~/assets/data/photo-view.json';
+import { type ICardView, type IPhoto } from '~/types/CardView';
 
 const props = defineProps<{
   id: number;

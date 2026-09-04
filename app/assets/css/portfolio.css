@@ -15,7 +15,7 @@
   min-height: 100%;
   background: var(--navy);
   color: var(--white);
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   line-height: 1.55;
 }
 
@@ -40,7 +40,7 @@ body {
   margin: 0;
   background: var(--navy);
   color: var(--white);
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   line-height: 1.55;
 }
 
@@ -98,7 +98,7 @@ a {
 }
 
 .hero::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background:
@@ -577,6 +577,7 @@ a {
   color: var(--white);
   padding: 8px 10px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .check {
@@ -603,7 +604,7 @@ a {
   cursor: pointer;
 }
 
-.submit-button:hover {
+.submit-button:not(:disabled):hover {
   filter: brightness(1.08);
 }
 
@@ -840,7 +841,7 @@ a {
 }
 
 .concept-badge::before {
-  content: "";
+  content: '';
   width: 7px;
   height: 7px;
   border-radius: 50%;
