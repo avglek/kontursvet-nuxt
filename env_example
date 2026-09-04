@@ -1,0 +1,7 @@
+SMTP_HOST="mail.hosting.reg.ru"
+SMTP_PORT=465
+SMTP_USER="postmail@kontursvet.spb.ru"
+SMTP_PASS=""
+
+SMTP_FROM="postmail@kontursvet.spb.ru"
+SMTP_TO="avglek@kontursvet.spb.ru"
