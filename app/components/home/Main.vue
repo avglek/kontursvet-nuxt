@@ -15,7 +15,7 @@
           область
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="/portfolio#request"
+          <a class="button button-primary" href="/lead"
             >Отправить фото для оценки <span aria-hidden="true">→</span></a
           ><a class="button button-ghost" href="#projects"
             >Смотреть проекты <span aria-hidden="true">↓</span></a
@@ -474,7 +474,7 @@
           </div>
         </div>
         <div class="final-actions">
-          <a href="/portfolio#request" class="button button-primary"
+          <a href="/lead" class="button button-primary"
             >Отправить фото для оценки →</a
           ><a href="tel:+79650473553" class="button button-ghost"
             >Позвонить Александру</a
