@@ -47,13 +47,15 @@ export default defineEventHandler(async (event) => {
     },
   });
 
-  await transporter.sendMail({
+  const sendInfo = await transporter.sendMail({
     from: config.smtpFrom,
     to: config.smtpTo,
     subject: `Заявка от ${lead.name}`,
     attachments,
     html: htmlbody.toString(),
   });
+
+  console.log('send info: ', sendInfo);
 
   return { success: true };
 });

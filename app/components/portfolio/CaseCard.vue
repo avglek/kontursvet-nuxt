@@ -1,6 +1,6 @@
 <template>
   <div :id="card.link">
-    <a class="case-card" href="#" @click.prevent="openCase(card.id)">
+    <a class="p_case-card" href="#" @click.prevent="openCase(card.id)">
       <img :src="card.img.src" :alt="card.img.alt" />
       <div class="case-card-body">
         <div class="eyebrow">{{ card.title }}</div>

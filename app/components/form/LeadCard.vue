@@ -172,8 +172,8 @@ import { ref } from 'vue';
 
 const { t, locale, setLocale } = useI18n();
 
-//const url = '/api/send-email'
-const url = '/api/substitution';
+const url = '/api/send-email';
+//const url = '/api/substitution';
 const modalMessage: Partial<IModalLeadPanel> = {};
 
 const form = reactive({

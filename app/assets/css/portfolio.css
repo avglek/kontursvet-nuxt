@@ -166,7 +166,7 @@ a {
   margin-top: 44px;
 }
 
-.case-card {
+.p_case-card {
   display: block;
   text-decoration: none;
   background: var(--blue);
@@ -175,14 +175,15 @@ a {
   transition:
     0.25s transform,
     0.25s border-color;
+  height: 100%;
 }
 
-.case-card:hover {
+.p_case-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent);
 }
 
-.case-card img {
+.p_case-card img {
   display: block;
   width: 100%;
   aspect-ratio: 16/10;
@@ -193,13 +194,13 @@ a {
   padding: 28px;
 }
 
-.case-card h2,
-.case-card h3 {
+.p_case-card h2,
+.p_case-card h3 {
   margin: 8px 0 12px;
   line-height: 1.15;
 }
 
-.case-card p {
+.p_case-card p {
   color: var(--muted);
   margin: 0;
 }
@@ -459,7 +460,7 @@ a {
   font-size: 0.94rem;
 }
 
-.case-card {
+.p_case-card {
   border-radius: 2px;
   background: #0d2745;
 }
