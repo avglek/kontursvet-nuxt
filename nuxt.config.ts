@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
-  modules: ['nuxt-email-renderer'],
+  modules: ['nuxt-email-renderer', '@nuxtjs/i18n'],
+  css: ['~/assets/css/style.css', '~/assets/css/portfolio.css'],
 
   app: {
     head: {
@@ -32,5 +33,12 @@ export default defineNuxtConfig({
     smtpTo: process.env.SMTP_TO,
   },
 
-  css: ['~/assets/css/style.css'],
+  i18n: {
+    locales: [
+      { code: 'ru', file: 'ru.json' },
+      { code: 'en', file: 'en.json' },
+    ],
+    defaultLocale: 'ru',
+    langDir: 'locales/',
+  },
 });

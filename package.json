@@ -12,6 +12,7 @@
     "rmi": "docker compose down && docker rmi kontursvet-nuxt-nuxt:latest"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^10.6.0",
     "nuxt": "^4.5.2",
     "nuxt-email-renderer": "^2.11.1",
     "resend": "^6.26.0",

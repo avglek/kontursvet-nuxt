@@ -1,7 +1,6 @@
-<script setup lang="ts">
-import LeadCard from '~/components/LeadCard.vue';
-</script>
-
 <template>
-  <LeadCard />
+  <main id="top">
+    <FormLeadCard />
+  </main>
 </template>
+<script setup lang="ts"></script>

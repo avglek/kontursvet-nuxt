@@ -225,9 +225,9 @@
                 Чёткая световая линия подчёркивает форму кровли и архитектурную
                 геометрию дома, не перегружая фасад.
               </p>
-              <a href="#try" data-select-mode="flex"
+              <!-- <a href="#try" data-select-mode="flex"
                 >Примерить направление <span aria-hidden="true">→</span></a
-              >
+              > -->
             </div>
           </article>
           <article class="service-card">
@@ -245,9 +245,9 @@
                 Декоративное оформление кровли, карнизов и отдельных зон фасада
                 добавляет глубину вечернему образу.
               </p>
-              <a href="#try" data-select-mode="fringe"
+              <!-- <a href="#try" data-select-mode="fringe"
                 >Примерить направление <span aria-hidden="true">→</span></a
-              >
+              > -->
             </div>
           </article>
           <article class="service-card">
@@ -265,9 +265,9 @@
                 Свет на стволах, кроне и отдельных акцентах связывает
                 архитектуру дома с пространством участка.
               </p>
-              <a href="#try" data-select-mode="complex"
+              <!-- <a href="#try" data-select-mode="complex"
                 >Примерить направление <span aria-hidden="true">→</span></a
-              >
+              > -->
             </div>
           </article>
           <article class="service-card">
@@ -285,9 +285,9 @@
                 Дом, дополнительные строения, деревья и территория работают как
                 единая световая композиция.
               </p>
-              <a href="#try" data-select-mode="complex"
+              <!-- <a href="#try" data-select-mode="complex"
                 >Примерить направление <span aria-hidden="true">→</span></a
-              >
+              > -->
             </div>
           </article>
         </div>
@@ -380,9 +380,9 @@
                 <li>Малый дом: около 24 м flex neon и около 24 м бахромы</li>
                 <li>Снежинки и световые мотивы</li>
               </ul>
-              <a href="#try" data-select-mode="flex"
+              <!-- <a href="#try" data-select-mode="flex"
                 >Примерить похожее решение →</a
-              >
+              > -->
             </div>
           </article>
           <article class="case-card">
@@ -402,9 +402,9 @@
                 <li>Световые занавесы</li>
                 <li>70 м гирлянды-нити на ели</li>
               </ul>
-              <a href="#try" data-select-mode="complex"
+              <!-- <a href="#try" data-select-mode="complex"
                 >Примерить похожее решение →</a
-              >
+              > -->
             </div>
           </article>
         </div>
@@ -474,8 +474,8 @@
           </div>
         </div>
         <div class="final-actions">
-          <a href="/lead" class="button button-primary"
-            >Отправить фото для оценки →</a
+          <NuxtLink href="/lead" class="button button-primary"
+            >Отправить фото для оценки →</NuxtLink
           ><a href="tel:+79650473553" class="button button-ghost"
             >Позвонить Александру</a
           >

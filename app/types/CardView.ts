@@ -39,3 +39,8 @@ interface IGallery {
   alt: string;
   figcaption: string;
 }
+
+export interface IModalLeadPanel {
+  title: string;
+  message: string;
+}

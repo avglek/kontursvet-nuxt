@@ -25,8 +25,8 @@
           >Портфолио
           <!-- <span aria-hidden="true">↗</span> -->
         </NuxtLink>
-        <a class="button button-small button-ghost" href="/lead"
-          >Отправить фото</a
+        <NuxtLink class="button button-small button-ghost" href="/lead"
+          >Отправить фото</NuxtLink
         >
       </nav>
     </div>
