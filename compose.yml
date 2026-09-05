@@ -20,13 +20,8 @@ services:
   nuxt:
     build: .
     container_name: nuxt
-    environment:
-      - SMTP_HOST=${SMTP_HOST}
-      - SMTP_PORT=${SMTP_PORT}
-      - SMTP_USER=${SMTP_USER}
-      - SMTP_PASS=${SMTP_PASS}
-      - SMTP_FROM=${SMTP_FROM}
-      - SMTP_TO=${SMTP_TO}
+    env_file:
+      - .env.prod
     deploy:
       restart_policy:
         condition: on-failure
@@ -35,4 +30,6 @@ services:
         window: 120s
     ports:
       - '3000:3000'
+    volumes:
+      - ./logs:/nuxtapp/logs
     restart: always

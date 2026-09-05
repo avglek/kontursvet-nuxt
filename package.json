@@ -17,7 +17,9 @@
     "nuxt-email-renderer": "^2.11.1",
     "resend": "^6.26.0",
     "vue": "^3.5.41",
-    "vue-router": "^5.2.0"
+    "vue-router": "^5.2.0",
+    "winston": "^3.19.0",
+    "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
     "nodemailer": "^7.0.13",

@@ -47,15 +47,28 @@ export default defineEventHandler(async (event) => {
     },
   });
 
-  const sendInfo = await transporter.sendMail({
-    from: config.smtpFrom,
-    to: config.smtpTo,
-    subject: `Заявка от ${lead.name}`,
-    attachments,
-    html: htmlbody.toString(),
-  });
+  try {
+    const sendInfo = await transporter.sendMail({
+      from: config.smtpFrom,
+      to: config.smtpTo,
+      subject: `Заявка от ${lead.name}`,
+      attachments,
+      html: htmlbody.toString(),
+    });
+    globalThis.nitroLogger.info(`Send mail: ${sendInfo.response}`);
 
-  console.log('send info: ', sendInfo);
-
-  return { success: true };
+    return { success: true };
+  } catch (error: any) {
+    globalThis.nitroLogger.error('Сбой при выполнении операции', {
+      error: error.message,
+    });
+    globalThis.nitroLogger.info(`
+      export:
+      SMTP_HOST=${config.smtpHost}
+      SMTP_PORT=${config.smtpPort}
+      SMTP_FROM=${config.smtpFrom}
+      SMTP_TO=${config.smtpTo}
+      `);
+    throw createError({ statusCode: 500, statusMessage: 'Internal Error' });
+  }
 });
