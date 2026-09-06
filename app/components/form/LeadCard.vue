@@ -197,11 +197,10 @@ const handleSubmit = async () => {
     });
     modalMessage.title = t('modal.success.title');
     modalMessage.message = t('modal.success.message');
+    $clientLog.info('Upload success:', response);
     isModalView.value = true;
   } catch (error) {
-    console.error('Upload failed:', error);
     $clientLog.warn('Upload failed:', error);
-    $clientLog.warn('FormData:', JSON.stringify(formData));
     modalMessage.title = t('modal.error.title');
     modalMessage.message = t('modal.error.message');
     isModalView.value = true;

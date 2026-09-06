@@ -1,3 +1,5 @@
+import type { error } from "winston";
+
 export default defineNuxtPlugin((nuxtApp) => {
   // Функция для отправки логов на сервер
   const sendLogToServer = async (
@@ -53,6 +55,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       clientLog: {
         info: (msg: string, data?: any) => sendLogToServer('info', msg, data),
         warn: (msg: string, data?: any) => sendLogToServer('warn', msg, data),
+        err: (msg: string, data?: any) => sendLogToServer('error', msg, data),
       },
     },
   };
