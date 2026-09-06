@@ -1,7 +1,9 @@
 services:
   nginx:
     build: ./nginx
-    container_name: nginx
+    image: kontursvet-nginx-prod
+    #image: kontursvet-nginx-dev
+    container_name: nginx_prod
     deploy:
       restart_policy:
         condition: on-failure
@@ -19,7 +21,9 @@ services:
 
   nuxt:
     build: .
-    container_name: nuxt
+    image: kontursvet-nuxt-prod
+    #image: kontursvet-nuxt-dev
+    container_name: nuxt_prod
     env_file:
       - .env.prod
     deploy:

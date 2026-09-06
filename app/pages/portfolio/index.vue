@@ -3,7 +3,6 @@
     <PortfolioConcept />
     <PortfolioCaseGrid />
     <PortfolioBenefits />
-    <PortfolioLeadCard />
   </main>
 </template>
 
