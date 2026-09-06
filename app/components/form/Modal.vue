@@ -47,6 +47,23 @@
   line-height: 1.08;
   margin: 0 0 3.8rem 0;
 }
+@media (max-width: 820px) {
+  #modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 100vh может баговать в мобильных браузерах из-за адресной строки, dvh решает это */
+    height: 100dvh;
+    background-color: rgba(255, 255, 255, 0.3); /* Полупрозрачный фон */
+
+    /* Центрирование контента */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Чтобы спиннер был поверх всех элементов */
+  }
+}
 </style>
 
 <script lang="ts" setup>

@@ -119,4 +119,21 @@
     opacity: 0;
   }
 }
+
+@media (max-width: 820px) {
+  .full-screen-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 100vh может баговать в мобильных браузерах из-за адресной строки, dvh решает это */
+    height: 100dvh;
+    background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный фон */
+
+    /* Центрирование контента */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 </style>

@@ -98,10 +98,6 @@
           <button class="submit-button" type="submit" :disabled="!form.check">
             Получить предварительную оценку
           </button>
-          <p class="form-note">
-            В демонстрационном файле отправка отключена. Канал получения заявок
-            подключается после согласования контактов.
-          </p>
           <p class="form-status" aria-live="polite"></p>
         </form>
       </div>
