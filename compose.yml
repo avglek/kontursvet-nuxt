@@ -32,8 +32,6 @@ services:
         delay: 5s
         max_attempts: 3
         window: 120s
-    ports:
-      - '3000:3000'
     volumes:
       - ./logs:/nuxtapp/logs
     restart: always
