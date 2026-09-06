@@ -112,6 +112,7 @@
 </style>
 
 <script lang="ts" setup>
+import imageCompression from 'browser-image-compression';
 import type { ILead } from '#shared/types/ILead';
 import { type IModalLeadPanel } from '~/types/CardView.ts';
 import { ref } from 'vue';
@@ -132,6 +133,14 @@ const form = reactive({
   message: '',
   check: false,
 });
+
+// Опции сжатия для изображений
+const compressionOptions = {
+  maxSizeMB: 1,
+  maxWidthOrHeight: 1920,
+  useWebWorker: true,
+};
+
 const fileInput = ref(null);
 const isFormDisabled = ref(false);
 const isModalView = ref(false);
@@ -162,9 +171,22 @@ const handleSubmit = async () => {
 
   const formData = new FormData();
 
-  selectedFile.forEach((file) => {
-    formData.append('files', file);
-  });
+  for (let file of selectedFile) {
+    if (file.type.startsWith('image/')) {
+      try {
+        const compressedFile = await imageCompression(file, compressionOptions);
+
+        // Добавляем сжатый файл в formData
+        formData.append('files', compressedFile, compressedFile.name);
+        $clientLog.info(
+          `add file: ${compressedFile.name} : ${compressedFile.size}`,
+        );
+      } catch (err) {
+        $clientLog.warn(`Compress failed: ${file.name}`, err);
+        console.error('Ошибка сжатия файла:', file.name, err);
+      }
+    }
+  }
 
   formData.append('json', JSON.stringify(body));
 
@@ -179,6 +201,7 @@ const handleSubmit = async () => {
   } catch (error) {
     console.error('Upload failed:', error);
     $clientLog.warn('Upload failed:', error);
+    $clientLog.warn('FormData:', JSON.stringify(formData));
     modalMessage.title = t('modal.error.title');
     modalMessage.message = t('modal.error.message');
     isModalView.value = true;

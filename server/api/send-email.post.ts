@@ -56,7 +56,6 @@ export default defineEventHandler(async (event) => {
       html: htmlbody.toString(),
     });
     globalThis.nitroLogger.info(`Send mail: ${sendInfo.response}`);
-
     return { success: true };
   } catch (error: any) {
     globalThis.nitroLogger.error('Сбой при выполнении операции', {
