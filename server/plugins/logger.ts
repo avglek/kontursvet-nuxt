@@ -13,27 +13,39 @@ export default defineNitroPlugin((nitroApp) => {
     }),
   );
 
-  //   // Настройка ротации файлов
-  //   const fileTransport = new winston.transports.DailyRotateFile({
-  //     dirname: path.resolve(process.cwd(), 'logs'),
-  //     filename: 'application-%DATE%.log',
-  //     datePattern: 'YYYY-MM-DD',
-  //     zippedArchive: true, // Архивовровать старые логи в .gz
-  //     maxSize: '20m', // Ротация при достижении 20 Мегабайт
-  //     maxFiles: '14d', // Хранить логи за последние 14 дней
-  //     level: 'info',
-  //   });
+  // Настройка цветов для консоли
+  const colors = {
+    error: 'red',
+    warn: 'yellow',
+    info: 'green',
+    http: 'magenta',
+    debug: 'white',
+  };
+  winston.addColors(colors);
 
-  //   const logger = winston.createLogger({
-  //     transports: [
-  //       new DailyRotateFile({
-  //         filename: 'application-%DATE%.log',
-  //         datePattern: 'YYYY-MM-DD-HH',
-  //         maxSize: '20m',
-  //         maxFiles: '14d',
-  //       }),
-  //     ],
-  //   });
+  // Формат для консоли (красивый и читаемый)
+  const consoleFormat = winston.format.combine(
+    winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
+    winston.format.colorize({ all: true }),
+    winston.format.printf(
+      (info) => `[${info.timestamp}] [${info.level}]: ${info.message}`,
+    ),
+  );
+
+  const fileFormat = winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.json(),
+  );
+
+  // Создаем отдельный транспорт (файл) специально для критических падений
+  const exceptionsTransport = new winston.transports.DailyRotateFile({
+    filename: 'logs/exceptions-%DATE%.log',
+    datePattern: 'YYYY-MM-DD',
+    zippedArchive: true,
+    maxSize: '20m',
+    maxFiles: '30d',
+    format: fileFormat,
+  });
 
   const logger = winston.createLogger({
     format: logFormat,
@@ -52,6 +64,17 @@ export default defineNitroPlugin((nitroApp) => {
         format: winston.format.combine(winston.format.colorize(), logFormat),
         level: process.env.NODE_ENV === 'production' ? 'info' : 'debug',
       }),
+    ],
+    // 🔥 АВТОМАТИЧЕСКИЙ ПЕРЕХВАТ НЕОБРАБОТАННЫХ ОШИБОК NODE.JS
+    exceptionHandlers: [
+      new winston.transports.Console({ format: consoleFormat }), // Дублировать в консоль
+      exceptionsTransport, // Писать в специальный файл
+    ],
+
+    // 🔥 АВТОМАТИЧЕСКИЙ ПЕРЕХВАТ НЕОБРАБОТАННЫХ ПРОМИСОВ (async/await без try/catch)
+    rejectionHandlers: [
+      new winston.transports.Console({ format: consoleFormat }),
+      exceptionsTransport,
     ],
   });
 

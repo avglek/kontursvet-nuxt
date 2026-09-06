@@ -116,6 +116,8 @@ import type { ILead } from '#shared/types/ILead';
 import { type IModalLeadPanel } from '~/types/CardView.ts';
 import { ref } from 'vue';
 
+const { $clientLog } = useNuxtApp();
+
 const { t, locale, setLocale } = useI18n();
 
 const url = '/api/send-email';
@@ -176,6 +178,7 @@ const handleSubmit = async () => {
     isModalView.value = true;
   } catch (error) {
     console.error('Upload failed:', error);
+    $clientLog.warn('Upload failed:', error);
     modalMessage.title = t('modal.error.title');
     modalMessage.message = t('modal.error.message');
     isModalView.value = true;
