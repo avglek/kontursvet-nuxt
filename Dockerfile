@@ -1,27 +1,16 @@
-# stage biuld
-FROM node:24-alpine as build-stage
-
-WORKDIR /nuxtapp
-
-COPY package*.json ./
-RUN npm install
-
+FROM node:22-alpine AS builder
+WORKDIR /app
+RUN corepack enable
+COPY package.json pnpm-lock.yaml* package-lock.json* ./
+RUN npm install --frozen-lockfile || npm install
 COPY . .
-
 RUN npm run build
 
-RUN rm -rf node_modules && \
-  NODE_ENV=production npm install \
-  --prefer-offline \
-  --pure-lockfile \
-  --non-interactive \
-  --production=true
-
-# stage deploy
-FROM node:24-alpine as prod-stage
-
-WORKDIR /nuxtapp
-
-COPY --from=build-stage /nuxtapp/.output/  ./.output/
-
-CMD [ "node", ".output/server/index.mjs" ]
+FROM node:22-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
+ENV PORT=3000
+COPY --from=builder /app/.output ./.output
+EXPOSE 3000
+CMD ["node", ".output/server/index.mjs"]

@@ -1,4 +1,9 @@
 <template>
+  <!-- Состояние загрузки -->
+  <div v-if="isLoading"><Spinner /></div>
+
+  <!-- Ошибка -->
+  <div v-else-if="error" class="error">{{ error }}</div>
   <section class="section" id="cases">
     <div class="shell">
       <div class="eyebrow">Портфолио</div>
@@ -13,9 +18,27 @@
   </section>
 </template>
 <script setup lang="ts">
-import rawData from '@/assets/data/case-cards.json';
+import { ref, onMounted } from 'vue';
 import type { ICard } from '~/types/CardView';
+import Spinner from '../Spinner.vue';
 
-const cards: ICard[] = rawData as ICard[];
+const cards = ref<ICard[]>([]);
+const isLoading = ref<boolean>(true);
+const error = ref<string | null>(null);
+
+onMounted(async () => {
+  try {
+    const response = await fetch('/api/data?file=case-cards.json');
+
+    if (!response.ok) {
+      throw new Error('Ошибка при загрузке данных');
+    }
+    cards.value = (await response.json()) as ICard[];
+  } catch (err) {
+    error.value = err instanceof Error ? err.message : 'Неизвестная ошибка';
+  } finally {
+    isLoading.value = false;
+  }
+});
 </script>
 <style></style>

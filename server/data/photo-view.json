@@ -5,31 +5,31 @@
     "gallery": [
       {
         "key": 1,
-        "src": "/img/portfolio/gatchina/02.webp",
+        "src": "/images/portfolio/gatchina/02.webp",
         "alt": "Обложка",
         "figcaption": "Основной ракурс новой фотосерии объекта."
       },
       {
         "key": 2,
-        "src": "/img/portfolio/gatchina/03.webp",
+        "src": "/images/portfolio/gatchina/03.webp",
         "alt": "Общий вид",
         "figcaption": "Дополнительный общий ракурс показывает световое решение в пространстве."
       },
       {
         "key": 3,
-        "src": "/img/portfolio/gatchina/04.webp",
+        "src": "/images/portfolio/gatchina/04.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 4,
-        "src": "/img/portfolio/gatchina/05.webp",
+        "src": "/images/portfolio/gatchina/05.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 5,
-        "src": "/img/portfolio/gatchina/06.webp",
+        "src": "/images/portfolio/gatchina/06.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       }
@@ -41,43 +41,43 @@
     "gallery": [
       {
         "key": 1,
-        "src": "/img/portfolio/vaskelovo/02.webp",
+        "src": "/images/portfolio/vaskelovo/02.webp",
         "alt": "Обложка",
         "figcaption": "Основной ракурс новой фотосерии объекта."
       },
       {
         "key": 2,
-        "src": "/img/portfolio/vaskelovo/03.webp",
+        "src": "/images/portfolio/vaskelovo/03.webp",
         "alt": "Общий вид",
         "figcaption": "Дополнительный общий ракурс показывает световое решение в пространстве."
       },
       {
         "key": 3,
-        "src": "/img/portfolio/vaskelovo/04.webp",
+        "src": "/images/portfolio/vaskelovo/04.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 4,
-        "src": "/img/portfolio/vaskelovo/05.webp",
+        "src": "/images/portfolio/vaskelovo/05.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 5,
-        "src": "/img/portfolio/vaskelovo/06.webp",
+        "src": "/images/portfolio/vaskelovo/06.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 6,
-        "src": "/img/portfolio/vaskelovo/07.webp",
+        "src": "/images/portfolio/vaskelovo/07.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 7,
-        "src": "/img/portfolio/vaskelovo/08.webp",
+        "src": "/images/portfolio/vaskelovo/08.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       }
@@ -89,61 +89,61 @@
     "gallery": [
       {
         "key": 1,
-        "src": "/img/portfolio/vsevologhks/02.webp",
+        "src": "/images/portfolio/vsevologhks/02.webp",
         "alt": "Обложка",
         "figcaption": "Основной ракурс новой фотосерии объекта."
       },
       {
         "key": 2,
-        "src": "/img/portfolio/vsevologhks/03.webp",
+        "src": "/images/portfolio/vsevologhks/03.webp",
         "alt": "Общий вид",
         "figcaption": "Дополнительный общий ракурс показывает световое решение в пространстве."
       },
       {
         "key": 3,
-        "src": "/img/portfolio/vsevologhks/04.webp",
+        "src": "/images/portfolio/vsevologhks/04.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 4,
-        "src": "/img/portfolio/vsevologhks/05.webp",
+        "src": "/images/portfolio/vsevologhks/05.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 5,
-        "src": "/img/portfolio/vsevologhks/06.webp",
+        "src": "/images/portfolio/vsevologhks/06.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 6,
-        "src": "/img/portfolio/vsevologhks/07.webp",
+        "src": "/images/portfolio/vsevologhks/07.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 7,
-        "src": "/img/portfolio/vsevologhks/08.webp",
+        "src": "/images/portfolio/vsevologhks/08.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 8,
-        "src": "/img/portfolio/vsevologhks/09.webp",
+        "src": "/images/portfolio/vsevologhks/09.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 9,
-        "src": "/img/portfolio/vsevologhks/10.webp",
+        "src": "/images/portfolio/vsevologhks/10.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 10,
-        "src": "/img/portfolio/vsevologhks/11.webp",
+        "src": "/images/portfolio/vsevologhks/11.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       }
@@ -155,25 +155,25 @@
     "gallery": [
       {
         "key": 1,
-        "src": "/img/portfolio/likolla/02.webp",
+        "src": "/images/portfolio/likolla/02.webp",
         "alt": "Обложка",
         "figcaption": "Основной ракурс новой фотосерии объекта."
       },
       {
         "key": 2,
-        "src": "/img/portfolio/likolla/03.webp",
+        "src": "/images/portfolio/likolla/03.webp",
         "alt": "Общий вид",
         "figcaption": "Дополнительный общий ракурс показывает световое решение в пространстве."
       },
       {
         "key": 3,
-        "src": "/img/portfolio/likolla/04.webp",
+        "src": "/images/portfolio/likolla/04.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 4,
-        "src": "/img/portfolio/likolla/05.webp",
+        "src": "/images/portfolio/likolla/05.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       }
@@ -185,19 +185,19 @@
     "gallery": [
       {
         "key": 1,
-        "src": "/img/portfolio/vaskelovo_2/02.webp",
+        "src": "/images/portfolio/vaskelovo_2/02.webp",
         "alt": "Обложка",
         "figcaption": "Основной ракурс новой фотосерии объекта."
       },
       {
         "key": 2,
-        "src": "/img/portfolio/vaskelovo_2/03.webp",
+        "src": "/images/portfolio/vaskelovo_2/03.webp",
         "alt": "Общий вид",
         "figcaption": "Дополнительный общий ракурс показывает световое решение в пространстве."
       },
       {
         "key": 3,
-        "src": "/img/portfolio/vaskelovo_2/04.webp",
+        "src": "/images/portfolio/vaskelovo_2/04.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       }
@@ -209,37 +209,37 @@
     "gallery": [
       {
         "key": 1,
-        "src": "/img/portfolio/bisness_premium_spb/02.webp",
+        "src": "/images/portfolio/bisness_premium_spb/02.webp",
         "alt": "Обложка",
         "figcaption": "Основной ракурс новой фотосерии объекта."
       },
       {
         "key": 2,
-        "src": "/img/portfolio/bisness_premium_spb/03.webp",
+        "src": "/images/portfolio/bisness_premium_spb/03.webp",
         "alt": "Общий вид",
         "figcaption": "Дополнительный общий ракурс показывает световое решение в пространстве."
       },
       {
         "key": 3,
-        "src": "/img/portfolio/bisness_premium_spb/04.webp",
+        "src": "/images/portfolio/bisness_premium_spb/04.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 4,
-        "src": "/img/portfolio/bisness_premium_spb/05.webp",
+        "src": "/images/portfolio/bisness_premium_spb/05.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 5,
-        "src": "/img/portfolio/bisness_premium_spb/06.webp",
+        "src": "/images/portfolio/bisness_premium_spb/06.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 6,
-        "src": "/img/portfolio/bisness_premium_spb/07.webp",
+        "src": "/images/portfolio/bisness_premium_spb/07.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       }
@@ -251,37 +251,37 @@
     "gallery": [
       {
         "key": 1,
-        "src": "/img/portfolio/repino/02.webp",
+        "src": "/images/portfolio/repino/02.webp",
         "alt": "Обложка",
         "figcaption": "Основной ракурс новой фотосерии объекта."
       },
       {
         "key": 2,
-        "src": "/img/portfolio/repino/03.webp",
+        "src": "/images/portfolio/repino/03.webp",
         "alt": "Общий вид",
         "figcaption": "Дополнительный общий ракурс показывает световое решение в пространстве."
       },
       {
         "key": 3,
-        "src": "/img/portfolio/repino/04.webp",
+        "src": "/images/portfolio/repino/04.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 4,
-        "src": "/img/portfolio/repino/05.webp",
+        "src": "/images/portfolio/repino/05.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 5,
-        "src": "/img/portfolio/repino/06.webp",
+        "src": "/images/portfolio/repino/06.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       },
       {
         "key": 6,
-        "src": "/img/portfolio/repino/07.webp",
+        "src": "/images/portfolio/repino/07.webp",
         "alt": "Дополнительный ракурс",
         "figcaption": "Кадр дополняет новую серию и раскрывает детали реализации."
       }

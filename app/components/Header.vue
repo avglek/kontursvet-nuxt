@@ -6,7 +6,7 @@
         href="/#top"
         aria-label="КонтурСвет — на главную"
         @click="closeMenu()"
-        ><img src="/img/icon.png" alt="КонтурСвет — Архитектура света"
+        ><img src="/images/icon.png" alt="КонтурСвет — Архитектура света"
       /></NuxtLink>
       <button
         class="mobile-toggle"

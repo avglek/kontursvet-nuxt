@@ -34,11 +34,11 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    locales: [
-      { code: 'ru', file: 'ru.json' },
-      { code: 'en', file: 'en.json' },
-    ],
     defaultLocale: 'ru',
-    langDir: 'locales/',
+    langDir: 'locales',
+    locales: [
+      { code: 'ru', language: 'ru-RU', file: 'ru.json' },
+      { code: 'en', language: 'en-US', file: 'en.json' },
+    ],
   },
 });

@@ -7,7 +7,7 @@
         :title="modalMessage.title!"
         :message="modalMessage.message!"
       />
-      <FormSpinner v-if="isFormDisabled.valueOf()" />
+      <Spinner v-if="isFormDisabled.valueOf()" />
       <div class="lead-card">
         <div class="lead-copy">
           <div class="eyebrow">Предварительная оценка</div>

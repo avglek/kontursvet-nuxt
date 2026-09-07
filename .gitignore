@@ -5,7 +5,7 @@
 .nitro
 .cache
 dist
-images
+docker-img
 
 # Node dependencies
 node_modules
@@ -27,3 +27,6 @@ logs
 #uploads
 uploads
 config
+
+#for prod
+prod

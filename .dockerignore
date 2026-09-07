@@ -1,28 +1,51 @@
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
-dist
-images
-
-# Node dependencies
+# Зависимости и логи (загрузятся внутри контейнера заново)
 node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store
 
-# Logs
-logs
-*.log
+# Результаты локальной сборки и кэш Nuxt 4
+.nuxt
+.output
+.nitro
+dist
+.cache
 
-# Misc
-.DS_Store
-.fleet
+# Среда разработки и конфигурации IDE
+.vscode
 .idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
 
-# Local env files
+# Локальные папки для картинок и переводов продакшна
+# (Они монтируются через volumes, копировать их в сам образ нельзя)
+prod
+
+# Конфигурационные файлы Docker и веб-сервера
+# (Они используются Docker-хостом, в слоях приложения Nuxt они не нужны)
+Dockerfile
+docker-compose*.yml
+nginx.conf
+
+# Система контроля версий и логи деплоя
+.git
+.gitignore
+.github
+.gitlab
+README.md
+LICENSE
+
+# Локальные переменные окружения (секреты)
 .env
 .env.*
 !.env.example
+env_example
 
 #uploads
 uploads
+logs

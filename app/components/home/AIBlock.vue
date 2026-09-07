@@ -18,7 +18,7 @@
           <div class="upload-preview">
             <img
               id="uploaded-photo"
-              src="/img/home/11.webp"
+              src="/images/home/11.webp"
               alt="Пример фотографии объекта"
             /><button type="button" id="choose-photo">Выбрать фото</button>
           </div>
@@ -55,7 +55,7 @@
           <div class="result-preview">
             <img
               id="concept-result"
-              src="/img/home/ps-01.webp"
+              src="/images/home/ps-01.webp"
               alt="Демонстрационный вариант светового оформления"
             />
             <div class="result-status">Демо на примере из портфолио</div>
@@ -69,17 +69,17 @@
       <img
         class="preview-source"
         data-preview-mode="flex"
-        src="/img/home/ps-01.webp"
+        src="/images/home/ps-01.webp"
         alt=""
       /><img
         class="preview-source"
         data-preview-mode="fringe"
-        src="/img/home/ps-02.webp"
+        src="/images/home/ps-02.webp"
         alt=""
       /><img
         class="preview-source"
         data-preview-mode="complex"
-        src="/img/home/ps-03.webp"
+        src="/images/home/ps-03.webp"
         alt=""
       />
       <HomeLeadForm />

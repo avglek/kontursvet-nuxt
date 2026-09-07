@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  nuxt-app:
+    # В деве запускаем Nuxt напрямую, минуя Multi-stage сборку продакшна
+    build:
+      context: .
+      target: builder # Если хотите использовать тот же Dockerfile, но остановиться на этапе сборщика
+    ports:
+      - '3000:3000' # Открываем порт наружу для HMR и Vue DevTools
+    environment:
+      - NODE_ENV=development
+    volumes:
+      # Монтируем весь проект, чтобы изменения кода сразу отражались в браузере
+      - .:/app
+      # Изолируем node_modules контейнера, чтобы они не затирались модулями с хоста
+      - /app/node_modules
+    # Переопределяем команду запуска на девелоперскую
+    command: npm run dev -- --host 0.0.0.0
+
+  nginx:
+    # Полностью выключаем Nginx в режиме разработки, чтобы не тратить ресурсы
+    entrypoint: ['echo', 'Nginx disabled in dev mode']
+    restart: 'no'

@@ -1,7 +1,1 @@
-docker save -o kontursvet-nuxt.tar kontursvet-nuxt-nuxt:lates
-
-
-openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout ./ssl/kontursvet/nginx.key -out ./ssl/kontursvet/nginx.crt
-
-31.31.197.52
-u3249345
+docker compose -f docker-compose.yml up -d

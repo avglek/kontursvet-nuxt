@@ -1,4 +1,9 @@
 <template>
+  <!-- Состояние загрузки -->
+  <div v-if="isLoading"><Spinner /></div>
+
+  <!-- Ошибка -->
+  <div v-else-if="error" class="error">{{ error }}</div>
   <section class="section concept-case" :id="card?.name">
     <div class="shell">
       <div class="case-heading">
@@ -56,7 +61,12 @@
       </div>
       <div class="gallery">
         <figure v-for="photo in card?.photos">
-          <img loading="lazy" :src="photo.src" :alt="photo.alt" />
+          <img
+            loading="lazy"
+            :src="photo.src"
+            :alt="photo.alt"
+            @click="openLightbox(photo.src)"
+          />
           <figcaption>{{ photo.figcaption }}</figcaption>
         </figure>
       </div>
@@ -68,20 +78,44 @@
 </template>
 
 <script lang="ts" setup>
-import rawData from '@/assets/data/cards-view.json';
-import rawPhotos from '~/assets/data/photo-view.json';
 import { type ICardView, type IPhoto } from '~/types/CardView';
+import { ref, onMounted } from 'vue';
+import Spinner from '../Spinner.vue';
+import { useLightbox } from '~/composables/useLightbox';
+
+// Подключаем функцию открытия
+const { openLightbox } = useLightbox();
+
+const cardViews = ref<ICardView[]>([]);
+const photos = ref<IPhoto[]>([]);
+const card = ref<ICardView | null>(null);
+const isLoading = ref<boolean>(true);
+const error = ref<string | null>(null);
 
 const props = defineProps<{
   id: number;
 }>();
-
-const cardViews: ICardView[] = <ICardView[]>rawData;
-const photos: IPhoto[] = <IPhoto[]>rawPhotos;
 const id: number = props.id;
 
-const card = cardViews[id - 1];
-card!.photos = photos[id - 1]?.gallery;
+onMounted(async () => {
+  try {
+    const cardResponse = await fetch('/api/data?file=cards-view.json');
+    const photoResponse = await fetch('/api/data?file=photo-view.json');
+
+    if (!cardResponse.ok || !photoResponse.ok) {
+      throw new Error('Ошибка при загрузке данных');
+    }
+    cardViews.value = (await cardResponse.json()) as ICardView[];
+    photos.value = (await photoResponse.json()) as IPhoto[];
+
+    card.value = cardViews.value[id - 1]!;
+    card.value.photos = photos.value[id - 1]?.gallery;
+  } catch (err) {
+    error.value = err instanceof Error ? err.message : 'Неизвестная ошибка';
+  } finally {
+    isLoading.value = false;
+  }
+});
 </script>
 
 <style scoped>

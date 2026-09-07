@@ -1,20 +1,18 @@
 <template>
-  <div class="full-screen-page">
-    <div class="center-page">
-      <div class="lds-spinner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+  <div class="overlay-loader">
+    <div class="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </div>
 </template>
@@ -22,20 +20,26 @@
 <script lang="ts" setup></script>
 
 <style scoped>
-.center-page {
-  display: grid;
-  place-items: center; /* Centers horizontally and vertically */
-  height: 100%; /* Ensures the body takes up the full screen height */
-  margin: 0;
+/* 1. Задний фон-подложка на весь экран */
+.overlay-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  /* dynamic vh (dvh) идеально подходит для мобильных, 
+     так как учитывает появление/скрытие адресной строки браузера */
+  height: 100dvh;
+  background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачный белый фон */
+
+  /* Центрирование спиннера */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Гарантирует, что лоадер будет поверх модалок, меню и шапки */
+  z-index: 9999;
 }
-.full-screen-page {
-  position: absolute;
-  width: 100%; /* 100% of the viewport width */
-  height: 100%; /* 100% of the dynamic viewport height (handles mobile address bars perfectly) */
-  box-sizing: border-box;
-  background: white;
-  opacity: 0.3;
-}
+
 .lds-spinner,
 .lds-spinner div,
 .lds-spinner div:after {
