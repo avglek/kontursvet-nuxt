@@ -5,7 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: nuxt_prod_app
+    image: kontursvet-nuxt-prod
+    container_name: kontursvet-nuxt-prod
     expose:
       - '3000'
     restart: unless-stopped
@@ -18,8 +19,11 @@ services:
       - ./prod/logs:/app/logs
 
   nginx:
-    image: nginx:alpine
-    container_name: nginx_prod_proxy
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    image: kontursvet-nginx-prod
+    container_name: kontursvet-nginx-prod
     ports:
       - '80:80' # Для работы по HTTP
       # - "443:443" # Раскомментируйте, когда добавите SSL (Certbot)
