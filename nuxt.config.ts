@@ -2,7 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
-  modules: ['nuxt-email-renderer', '@nuxtjs/i18n', '@vueuse/nuxt'],
+  modules: [
+    'nuxt-email-renderer',
+    '@nuxtjs/i18n',
+    '@vueuse/nuxt',
+    '@nuxt/test-utils/module',
+  ],
   css: ['~/assets/css/style.css', '~/assets/css/portfolio.css'],
 
   app: {
@@ -31,6 +36,11 @@ export default defineNuxtConfig({
     smtpPass: '',
     smtpFrom: '',
     smtpTo: '',
+    botToken: '',
+    chatId: '',
+    nodeSslCerts: '',
+    smtpActive: '',
+    botActive: '',
   },
 
   i18n: {

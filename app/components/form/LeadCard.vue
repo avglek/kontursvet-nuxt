@@ -121,7 +121,7 @@ const { $clientLog } = useNuxtApp();
 
 const { t, locale, setLocale } = useI18n();
 
-const url = '/api/send-email';
+const url = '/api/send-message';
 //const url = '/api/substitution';
 const modalMessage: Partial<IModalLeadPanel> = {};
 

@@ -5,3 +5,14 @@ export interface ILead {
   location: string;
   message: string;
 }
+
+export interface ILeadAttachment {
+  filename: string;
+  data: Buffer | undefined;
+  fileType?: string;
+}
+
+export interface ILeadMessage {
+  text: ILead;
+  attachments: ILeadAttachment[];
+}

@@ -81,13 +81,6 @@ export default defineNitroPlugin((nitroApp) => {
   // Делаем логгер доступным глобально в контексте Nitro
   globalThis.nitroLogger = logger;
 
-  // Перехватываем стандартные логи сервера Nuxt/Nitro
-  // nitroApp.hooks.hook('request', (event) => {
-  //   logger.info(
-  //     `Входящий запрос: ${event.node.req.method} ${event.node.req.url}`,
-  //   );
-  // });
-
   nitroApp.hooks.hook('error', (error, { event }) => {
     logger.error(`Ошибка сервера: ${error.message}`, {
       stack: error.stack,
