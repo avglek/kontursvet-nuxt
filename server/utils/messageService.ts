@@ -131,16 +131,11 @@ export async function cleanUpFiles(filePaths: string[]): Promise<void> {
 
 export function getMessage(parts: MultiPartData[]): ILeadMessage {
   const attachments: ILeadAttachment[] = [];
-  const lead: Partial<ILead> = {};
+  let lead: Partial<ILead> = {};
   for (const part of parts) {
     if (part.name === 'json') {
       const jsonString = part.data.toString();
-      const obj = <ILead>JSON.parse(jsonString);
-      const keys = Object.keys(obj);
-
-      keys.forEach((key) => {
-        lead[key as keyof ILead] = obj[key as keyof ILead];
-      });
+      lead = <ILead>JSON.parse(jsonString);
     }
     if (part.name === 'files' && part.filename) {
       attachments.push({

@@ -8,6 +8,10 @@ import {
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
+  const isBotActive = String(config.botActive) === 'true';
+  const isMailActive = String(config.smtpActive) === 'true';
+
+  console.log('active:', isBotActive, isMailActive);
   try {
     const data = await readMultipartFormData(event);
     if (!data) {
@@ -17,15 +21,18 @@ export default defineEventHandler(async (event) => {
 
     const html = (await renderEmailComponent('MailOrder', {
       lead: message.text,
+      isBot: isBotActive,
     })) as string;
 
-    if (config.botActive === 'true') {
+    if (isBotActive) {
+      globalThis.nitroLogger.info('Отправка через MAX');
       const uniqueNames = await saveUploadedFiles(message.attachments);
       await sendToBot(html, uniqueNames);
       await cleanUpFiles(uniqueNames);
     }
 
-    if (config.smtpActive === 'true') {
+    if (isMailActive) {
+      globalThis.nitroLogger.info('Отправка через e-mail');
       await sendToEmail(html, message.text.name, message.attachments);
     }
 

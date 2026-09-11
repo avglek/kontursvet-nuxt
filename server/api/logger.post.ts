@@ -4,8 +4,6 @@ export default defineEventHandler(async (event) => {
 
   const logMessage = `[Frontend] ${message} (URL: ${url || 'unknown'})`;
 
-  console.log('log:', level, message, details);
-
   // Передаем в Winston на сервере в зависимости от уровня
   if (level === 'error') {
     globalThis.nitroLogger.error(logMessage, details);

@@ -46,12 +46,11 @@
           <div class="field">
             <label>Телефон</label
             ><input
-              v-model="form.phone"
-              name="phone"
-              type="tel"
-              autocomplete="tel"
-              required
-              placeholder="+7 ___ ___-__-__"
+              v-maska
+              v-model="phoneFormatted"
+              data-maska="+7(###)###-##-##"
+              @maska="phoneRaw = $event.detail.unmasked"
+              placeholder="+7(999)000-00-00"
             />
           </div>
           <div class="field">
@@ -113,21 +112,20 @@
 
 <script lang="ts" setup>
 import imageCompression from 'browser-image-compression';
-import type { ILead } from '#shared/types/ILead';
+import type { ILead, ILeadPhone } from '#shared/types/ILead';
 import { type IModalLeadPanel } from '~/types/CardView.ts';
 import { ref } from 'vue';
+import { vMaska } from 'maska/vue';
 
 const { $clientLog } = useNuxtApp();
 
 const { t, locale, setLocale } = useI18n();
 
 const url = '/api/send-message';
-//const url = '/api/substitution';
 const modalMessage: Partial<IModalLeadPanel> = {};
 
 const form = reactive({
   name: '',
-  phone: '',
   home: '',
   location: '',
   message: '',
@@ -144,6 +142,8 @@ const compressionOptions = {
 const fileInput = ref(null);
 const isFormDisabled = ref(false);
 const isModalView = ref(false);
+const phoneFormatted = ref('');
+const phoneRaw = ref('');
 
 let selectedFile: File[] = [];
 
@@ -161,9 +161,13 @@ const handleFileChange = (e: Event) => {
 const handleSubmit = async () => {
   form.check = false;
   isFormDisabled.value = true;
+  const phone: ILeadPhone = {
+    digital: phoneRaw.value,
+    format: phoneFormatted.value,
+  };
   const body: ILead = {
     name: form.name,
-    phone: form.phone,
+    phone,
     home: form.home,
     message: form.message,
     location: form.location,
@@ -216,7 +220,8 @@ const clearForm = () => {
   form.location = '';
   form.message = '';
   form.name = '';
-  form.phone = '';
+  phoneFormatted.value = '';
+  phoneRaw.value = '';
 
   if (fileInput.value) {
     // @ts-ignore

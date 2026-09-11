@@ -1,9 +1,14 @@
 export interface ILead {
   name: string;
-  phone: string;
+  phone: ILeadPhone;
   home: string;
   location: string;
   message: string;
+}
+
+export interface ILeadPhone {
+  digital: string;
+  format: string;
 }
 
 export interface ILeadAttachment {

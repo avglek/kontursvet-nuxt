@@ -17,6 +17,7 @@ services:
       - ./prod/images:/app/.output/public/images.
       - ./prod/data:/app/server/data
       - ./prod/logs:/app/logs
+      - ./prod/ssl:/app/ssl
 
   nginx:
     build:

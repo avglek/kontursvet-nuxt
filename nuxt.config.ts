@@ -39,8 +39,8 @@ export default defineNuxtConfig({
     botToken: '',
     chatId: '',
     nodeSslCerts: '',
-    smtpActive: '',
-    botActive: '',
+    smtpActive: 'false',
+    botActive: 'false',
   },
 
   i18n: {
