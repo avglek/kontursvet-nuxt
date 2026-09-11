@@ -13,8 +13,9 @@ export interface ILeadPhone {
 
 export interface ILeadAttachment {
   filename: string;
-  data: Buffer | undefined;
-  fileType?: string;
+  content: Buffer | undefined;
+  contentType?: string | undefined;
+  encoding: 'base64';
 }
 
 export interface ILeadMessage {

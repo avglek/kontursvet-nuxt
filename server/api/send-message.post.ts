@@ -1,6 +1,8 @@
+import { ILead } from '~~/shared/types/ILead';
 import {
   cleanUpFiles,
   getMessage,
+  markdownText,
   saveUploadedFiles,
   sendToBot,
   sendToEmail,
@@ -19,20 +21,19 @@ export default defineEventHandler(async (event) => {
     }
     const message = getMessage(data);
 
-    const html = (await renderEmailComponent('MailOrder', {
-      lead: message.text,
-      isBot: isBotActive,
-    })) as string;
-
     if (isBotActive) {
-      globalThis.nitroLogger.info('Отправка через MAX');
       const uniqueNames = await saveUploadedFiles(message.attachments);
-      await sendToBot(html, uniqueNames);
+      globalThis.nitroLogger.info('Отправка через MAX');
+
+      await sendToBot(markdownText(message.text), uniqueNames);
       await cleanUpFiles(uniqueNames);
     }
 
     if (isMailActive) {
       globalThis.nitroLogger.info('Отправка через e-mail');
+      const html = (await renderEmailComponent('MailOrder', {
+        lead: message.text,
+      })) as string;
       await sendToEmail(html, message.text.name, message.attachments);
     }
 

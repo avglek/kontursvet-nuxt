@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
       const keys = Object.keys(obj);
 
       keys.forEach((key) => {
-        lead[key as keyof ILead] = obj[key as keyof ILead];
+       // lead[key as keyof ILead] = obj[key as keyof ILead];
       });
     }
     if (part.name === 'files' && part.filename) {

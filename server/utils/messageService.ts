@@ -17,12 +17,12 @@ export async function saveUploadedFiles(
   await fs.mkdir(uploadDir, { recursive: true });
 
   for (const file of files) {
-    if (!file.filename || !file.data) continue;
+    if (!file.filename || !file.content) continue;
 
     const uniqueName = `${Date.now()}-${Math.random().toString(36).slice(2, 7)}-${file.filename}`;
     const filePath = path.join(uploadDir, uniqueName);
 
-    await fs.writeFile(filePath, file.data);
+    await fs.writeFile(filePath, file.content);
     savedPaths.push(filePath);
   }
 
@@ -30,7 +30,7 @@ export async function saveUploadedFiles(
 }
 
 export async function sendToBot(
-  messageHtml: string,
+  messageText: string,
   uniquePatch: string[],
 ): Promise<void> {
   globalThis.nitroLogger.info(
@@ -69,11 +69,11 @@ export async function sendToBot(
       photos.push(photo.toJson());
     }
 
-    const response = await bot.api.sendMessageToChat(chatId, messageHtml, {
-      format: 'html',
+    await bot.api.sendMessageToChat(chatId, messageText, {
+      format: 'markdown',
       attachments: photos,
     });
-    globalThis.nitroLogger.info('Сообщение отправлено:', response);
+    globalThis.nitroLogger.info('Сообщение отправлено.');
   } catch (error: any) {
     throw createError({
       message: `Ошибка отправки в мессаджер Max:${error.message}`,
@@ -140,11 +140,24 @@ export function getMessage(parts: MultiPartData[]): ILeadMessage {
     if (part.name === 'files' && part.filename) {
       attachments.push({
         filename: part.filename,
-        data: part.data,
-        fileType: part.type,
+        content: part.data,
+        contentType: part.type,
+        encoding: 'base64',
       });
     }
   }
 
   return { text: lead as ILead, attachments };
+}
+
+export function markdownText(lead: ILead): string {
+  let text = `
+    **Заказчик:** ${lead.name}
+    **телефон:** [${lead.phone.format}](tel:${lead.phone.digital})
+    `;
+  if (lead.home) text += `**тип объекта:** ${lead.home}\n`;
+  if (lead.location) text += `**где находится:** ${lead.location}\n`;
+  if (lead.message) text += `**Коротко о задаче:** ${lead.message}\n`;
+
+  return text;
 }
