@@ -1,7 +1,12 @@
-NUXT_SMTP_HOST="mail.hosting.reg.ru"
+NUXT_SMTP_HOST=""
 NUXT_SMTP_PORT=465
-NUXT_SMTP_USER="postmail@kontursvet.spb.ru"
+NUXT_SMTP_USER=""
 NUXT_SMTP_PASS=""
+NUXT_SMTP_ACTIVE="true"
+NUXT_SMTP_FROM=""
+NUXT_SMTP_TO=""
 
-NUXT_SMTP_FROM="postmail@kontursvet.spb.ru"
-NUXT_SMTP_TO="avglek@kontursvet.spb.ru"
+NUXT_BOT_ACTIVE="false"
+NUXT_BOT_TOKEN=""
+NUXT_CHAT_ID=""
+NUXT_NODE_SSL_CERTS=""
