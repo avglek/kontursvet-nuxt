@@ -3,7 +3,7 @@ import {
   getMessage,
   saveUploadedFiles,
   sendToEmail,
-  //   cleanUpFiles,
+  cleanUpFiles,
 } from '../../server/utils/messageService';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -34,6 +34,13 @@ vi.hoisted(() => {
     warn: vi.fn(),
     error: vi.fn(),
   });
+
+  vi.stubGlobal('createError', (errorOptions: any) => {
+    const error = new Error(
+      errorOptions.message || errorOptions.statusMessage || 'Nuxt Error',
+    );
+    return Object.assign(error, errorOptions);
+  });
 });
 
 vi.mock('nodemailer', () => ({
@@ -47,10 +54,12 @@ vi.mock('node:fs/promises', () => ({
     mkdir: vi.fn().mockResolvedValue(undefined),
     writeFile: vi.fn().mockResolvedValue(undefined),
     readFile: vi.fn().mockResolvedValue(undefined),
+    unlink: vi.fn().mockResolvedValue(undefined),
   },
   mkdir: vi.fn().mockResolvedValue(undefined),
   writeFile: vi.fn().mockResolvedValue(undefined),
   readFile: vi.fn().mockResolvedValue(undefined),
+  unlink: vi.fn().mockResolvedValue(undefined),
 }));
 vi.mock('@maxhub/max-bot-api');
 
@@ -150,7 +159,11 @@ describe('Message Service (Unit Tests)', () => {
       const html = '<html>Тест</html>';
       const from = 'Иван';
       const attachments: ILeadAttachment[] = [
-        { filename: '/tmp/uploads/123-photo.jpg', data: undefined },
+        {
+          filename: '/tmp/uploads/123-photo.jpg',
+          content: undefined,
+          encoding: 'base64',
+        },
       ];
 
       // Вызываем функцию с теми же вложениями, что ждем внутри
@@ -165,30 +178,30 @@ describe('Message Service (Unit Tests)', () => {
     });
   });
 
-  //   // --- Тест удаления временных файлов ---
-  //   describe('cleanUpFiles', () => {
-  //     it('должна вызвать fs.unlink для каждого файла', async () => {
-  //       vi.mocked(fs.unlink).mockResolvedValue(undefined);
+  // --- Тест удаления временных файлов ---
+  describe('cleanUpFiles', () => {
+    it('должна вызвать fs.unlink для каждого файла', async () => {
+      vi.mocked(fs.unlink).mockResolvedValue(undefined);
 
-  //       const filePaths = ['/path/1.jpg', '/path/2.jpg'];
-  //       await cleanUpFiles(filePaths);
+      const filePaths = ['/path/1.jpg', '/path/2.jpg'];
+      await cleanUpFiles(filePaths);
 
-  //       expect(fs.unlink).toHaveBeenCalledTimes(2);
-  //       expect(fs.unlink).toHaveBeenNthCalledWith(1, '/path/1.jpg');
-  //       expect(fs.unlink).toHaveBeenNthCalledWith(2, '/path/2.jpg');
-  //     });
+      expect(fs.unlink).toHaveBeenCalledTimes(2);
+      expect(fs.unlink).toHaveBeenNthCalledWith(1, '/path/1.jpg');
+      expect(fs.unlink).toHaveBeenNthCalledWith(2, '/path/2.jpg');
+    });
 
-  //     it('не должна прерывать выполнение, если один из файлов не удалился', async () => {
-  //       // Имитируем ошибку удаления для первого файла и успех для второго
-  //       vi.mocked(fs.unlink)
-  //         .mockRejectedValueOnce(new Error('File not found'))
-  //         .mockResolvedValueOnce(undefined);
+    it('не должна прерывать выполнение, если один из файлов не удалился', async () => {
+      // Имитируем ошибку удаления для первого файла и успех для второго
+      vi.mocked(fs.unlink)
+        .mockRejectedValueOnce(new Error('File not found'))
+        .mockResolvedValueOnce(undefined);
 
-  //       const filePaths = ['/path/broken.jpg', '/path/good.jpg'];
+      const filePaths = ['/path/broken.jpg', '/path/good.jpg'];
 
-  //       // Тест должен успешно завершиться без выброса ошибки наружу
-  //       await expect(cleanUpFiles(filePaths)).resolves.not.toThrow();
-  //       expect(fs.unlink).toHaveBeenCalledTimes(2);
-  //     });
-  //   });
+      // Тест должен успешно завершиться без выброса ошибки наружу
+      await expect(cleanUpFiles(filePaths)).resolves.not.toThrow();
+      expect(fs.unlink).toHaveBeenCalledTimes(2);
+    });
+  });
 });

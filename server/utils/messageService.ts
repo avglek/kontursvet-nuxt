@@ -122,9 +122,10 @@ export async function cleanUpFiles(filePaths: string[]): Promise<void> {
     try {
       await fs.unlink(filePath);
     } catch (error: any) {
-      throw createError({
-        message: `Ошибка удаления файла ${filePath}:${error.message}`,
-      });
+      globalThis.nitroLogger?.error(
+        `Ошибка удаления файла ${filePath}:`,
+        error,
+      );
     }
   }
 }
