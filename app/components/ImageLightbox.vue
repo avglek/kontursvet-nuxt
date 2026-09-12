@@ -10,7 +10,7 @@
         <button class="close-btn" @click="closeLightbox" aria-label="Закрыть">
           &times;
         </button>
-        <NuxtImg
+        <img
           placeholder="blur"
           :src="activeImageSrc"
           alt="Полный размер"
@@ -21,7 +21,7 @@
   </Teleport>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { watch } from 'vue';
 import { useLightbox } from '~/composables/useLightbox';
 
@@ -29,6 +29,7 @@ const { activeImageSrc, closeLightbox } = useLightbox();
 
 // Блокируем скролл страницы на мобильных и ПК при открытии
 watch(activeImageSrc, (newValue) => {
+  console.log('img:', activeImageSrc.value);
   if (typeof window !== 'undefined') {
     document.body.style.overflow = newValue ? 'hidden' : '';
   }

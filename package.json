@@ -8,8 +8,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "clear": "docker compose down && docker image prune -f -a",
     "prod": "docker compose up -d",
-    "rmi": "docker compose down && docker rmi kontursvet-nuxt-nuxt:latest",
+    "save": "docker save kontursvet-nuxt-prod:latest|gzip > ./docker_img/kontursvet-nuxt-prod && docker save kontursvet-nginx-prod:latest|gzip > ./docker_img/kontursvet-nginx-prod ",
     "test": "vitest"
   },
   "dependencies": {
