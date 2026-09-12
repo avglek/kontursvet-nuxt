@@ -1,5 +1,3 @@
-//declare var renderEmailComponent: any;
-
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
   getMessage,
@@ -19,6 +17,25 @@ import type {
   ILeadMessage,
 } from '../../shared/types/ILead';
 
+vi.hoisted(() => {
+  vi.stubGlobal('useRuntimeConfig', (() => ({
+    mail: {
+      host: '://test.com',
+      port: 465,
+      user: 'test@test.com',
+      pass: 'password',
+      from: 'test@test.com',
+      to: 'manager@test.com',
+    },
+  })) as unknown);
+
+  vi.stubGlobal('nitroLogger', {
+    info: vi.fn(), // пустая функция-заглушка
+    warn: vi.fn(),
+    error: vi.fn(),
+  });
+});
+
 vi.mock('nodemailer', () => ({
   default: {
     createTransport: vi.fn(),
@@ -36,23 +53,6 @@ vi.mock('node:fs/promises', () => ({
   readFile: vi.fn().mockResolvedValue(undefined),
 }));
 vi.mock('@maxhub/max-bot-api');
-
-vi.stubGlobal('useRuntimeConfig', () => ({
-  mail: {
-    host: '://test.com',
-    port: 465,
-    user: 'test@test.com',
-    pass: 'password',
-    from: 'test@test.com',
-    to: 'manager@test.com',
-  },
-}));
-
-vi.stubGlobal('nitroLogger', {
-  info: vi.fn(), // пустая функция-заглушка
-  warn: vi.fn(),
-  error: vi.fn(),
-});
 
 const mockMessageText = `{
         "name": "Дмитрий",  
@@ -97,8 +97,9 @@ describe('Message Service (Unit Tests)', () => {
       const mockFiles: ILeadAttachment[] = [
         {
           filename: 'photo.jpg',
-          data: Buffer.from('fake-image'),
-          fileType: 'image/jpeg',
+          content: Buffer.from('fake-image'),
+          contentType: 'image/jpeg',
+          encoding: 'base64',
         },
       ];
 
@@ -114,11 +115,11 @@ describe('Message Service (Unit Tests)', () => {
     });
 
     it('должна пропустить файл, если у него нет имени или данных', async () => {
-      const mockFiles = [
-        { filename: '', data: undefined }, // невалидный файл
+      const mockFiles: ILeadAttachment[] = [
+        { filename: '', content: undefined, encoding: 'base64' }, // невалидный файл
       ];
 
-      const result = await saveUploadedFiles(mockFiles as ILeadAttachment[]);
+      const result = await saveUploadedFiles(mockFiles);
 
       expect(fs.writeFile).not.toHaveBeenCalled();
       expect(result.length).toBe(0);
