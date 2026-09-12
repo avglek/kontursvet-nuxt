@@ -10,7 +10,12 @@
         <button class="close-btn" @click="closeLightbox" aria-label="Закрыть">
           &times;
         </button>
-        <img :src="activeImageSrc" alt="Полный размер" class="fullsize-img" />
+        <NuxtImg
+          placeholder="blur"
+          :src="activeImageSrc"
+          alt="Полный размер"
+          class="fullsize-img"
+        />
       </div>
     </Transition>
   </Teleport>

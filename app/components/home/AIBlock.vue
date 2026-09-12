@@ -16,7 +16,8 @@
         <div class="ai-card">
           <div class="step-title"><span>01</span> Загрузите фото дома</div>
           <div class="upload-preview">
-            <img
+            <NuxtImg
+              placeholder="blur"
               id="uploaded-photo"
               src="/images/home/11.webp"
               alt="Пример фотографии объекта"
@@ -53,7 +54,8 @@
         <div class="ai-card ai-result">
           <div class="step-title"><span>03</span> Визуальный preview</div>
           <div class="result-preview">
-            <img
+            <NuxtImg
+              placeholder="blur"
               id="concept-result"
               src="/images/home/ps-01.webp"
               alt="Демонстрационный вариант светового оформления"
@@ -66,17 +68,20 @@
           </p>
         </div>
       </div>
-      <img
+      <NuxtImg
+        placeholder="blur"
         class="preview-source"
         data-preview-mode="flex"
         src="/images/home/ps-01.webp"
         alt=""
-      /><img
+      /><NuxtImg
+        placeholder="blur"
         class="preview-source"
         data-preview-mode="fringe"
         src="/images/home/ps-02.webp"
         alt=""
-      /><img
+      /><NuxtImg
+        placeholder="blur"
         class="preview-source"
         data-preview-mode="complex"
         src="/images/home/ps-03.webp"

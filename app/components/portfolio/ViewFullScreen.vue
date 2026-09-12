@@ -8,7 +8,12 @@
           @click.self="isFullSize = false"
         >
           <button class="close-btn" @click="isFullSize = false">&times;</button>
-          <img :src="imageSrc" alt="Полный размер" class="fullsize-img" />
+          <NuxtImg
+            placeholder="blur"
+            :src="imageSrc"
+            alt="Полный размер"
+            class="fullsize-img"
+          />
         </div>
       </Transition>
     </Teleport>

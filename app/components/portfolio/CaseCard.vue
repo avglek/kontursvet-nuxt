@@ -1,7 +1,7 @@
 <template>
   <div :id="card.link">
     <a class="p_case-card" href="#" @click.prevent="openCase(card.id)">
-      <img :src="card.img.src" :alt="card.img.alt" />
+      <NuxtImg placeholder="blur" :src="card.img.src" :alt="card.img.alt" />
       <div class="case-card-body">
         <div class="eyebrow">{{ card.title }}</div>
         <h2>{{ card.subTitle }}</h2>

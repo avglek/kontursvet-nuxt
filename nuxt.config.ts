@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@vueuse/nuxt',
     '@nuxt/test-utils/module',
+    '@nuxt/image',
   ],
   css: ['~/assets/css/style.css', '~/assets/css/portfolio.css'],
 
@@ -50,5 +51,11 @@ export default defineNuxtConfig({
       { code: 'ru', language: 'ru-RU', file: 'ru.json' },
       { code: 'en', language: 'en-US', file: 'en.json' },
     ],
+  },
+
+  image: {
+    format: ['webp'],
+    quality: 80,
+    densities: [1, 2, 3],
   },
 });

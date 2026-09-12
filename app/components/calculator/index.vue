@@ -22,7 +22,8 @@
             /></label>
           </div>
           <div class="preview">
-            <img
+            <NuxtImg
+              placeholder="blur"
               id="uploaded-photo"
               src="/images/calc/05.png"
               alt="Пример фотографии объекта"

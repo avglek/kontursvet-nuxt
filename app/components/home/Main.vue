@@ -30,7 +30,8 @@
         </p>
       </div>
       <div class="hero-media">
-        <img
+        <NuxtImg
+          placeholder="blur"
           src="/images/home/hero_02.webp"
           alt="Дом с контурной подсветкой и световым оформлением кровли"
         /><span class="image-label">Реальный объект · кровля и фасад</span>
@@ -73,7 +74,8 @@
         </div>
         <div class="project-grid">
           <article class="project-card project-card-featured">
-            <img
+            <NuxtImg
+              placeholder="blur"
               src="/images/home/001.webp"
               alt="Световое оформление, Гатчина"
               style="object-position: 50% 48%"
@@ -86,7 +88,8 @@
           </article>
 
           <article class="project-card">
-            <img
+            <NuxtImg
+              placeholder="blur"
               src="/images/home/002.webp"
               alt="Световое оформление, Васкелово"
               style="object-position: 50% 50%"
@@ -97,7 +100,8 @@
             </div>
           </article>
           <article class="project-card">
-            <img
+            <NuxtImg
+              placeholder="blur"
               src="/images/home/003.webp"
               alt="Световое оформление, Репино"
               style="object-position: 50% 42%"
@@ -109,7 +113,8 @@
             </div>
           </article>
           <article class="project-card">
-            <img
+            <NuxtImg
+              placeholder="blur"
               src="/images/home/004.webp"
               alt="Световое оформление, Всеволожск"
               style="object-position: 50% 46%"
@@ -121,7 +126,8 @@
             </div>
           </article>
           <article class="project-card">
-            <img
+            <NuxtImg
+              placeholder="blur"
               src="/images/home/005.webp"
               alt="Световое оформление, Flex neon"
               style="object-position: 50% 50%"
@@ -155,7 +161,8 @@
     <section class="section composition-section">
       <div class="container composition-card">
         <div class="composition-photo">
-          <img
+          <NuxtImg
+            placeholder="blur"
             src="/images/home/006.webp"
             alt="Дом с оформленной кровлей, фасадом и террасой"
           /><span class="photo-pin pin-roof">Кровля</span
@@ -212,7 +219,8 @@
         <div class="services-grid">
           <article class="service-card">
             <div class="service-media">
-              <img
+              <NuxtImg
+                placeholder="blur"
                 src="/images/home/007.webp"
                 alt="Контурная подсветка flex neon"
                 style="object-position: 50% 44%"
@@ -232,7 +240,8 @@
           </article>
           <article class="service-card">
             <div class="service-media">
-              <img
+              <NuxtImg
+                placeholder="blur"
                 src="/images/home/008.webp"
                 alt="Гирлянда «бахрома»"
                 style="object-position: 50% 48%"
@@ -252,7 +261,8 @@
           </article>
           <article class="service-card">
             <div class="service-media">
-              <img
+              <NuxtImg
+                placeholder="blur"
                 src="/images/home/009.webp"
                 alt="Световое оформление деревьев"
                 style="object-position: 50% 55%"
@@ -272,7 +282,8 @@
           </article>
           <article class="service-card">
             <div class="service-media">
-              <img
+              <NuxtImg
+                placeholder="blur"
                 src="/images/home/010.webp"
                 alt="Комплексное оформление"
                 style="object-position: 50% 50%"
@@ -363,7 +374,11 @@
         <div class="cases-grid">
           <article class="case-card">
             <div class="case-photo">
-              <img src="/images/home/13.webp" alt="Кейс КонтурСвет: Гатчина" />
+              <NuxtImg
+                placeholder="blur"
+                src="/images/home/13.webp"
+                alt="Кейс КонтурСвет: Гатчина"
+              />
             </div>
             <div class="case-body">
               <div class="eyebrow">Гатчина</div>
@@ -387,7 +402,8 @@
           </article>
           <article class="case-card">
             <div class="case-photo">
-              <img
+              <NuxtImg
+                placeholder="blur"
                 src="/images/home/14.webp"
                 alt="Кейс КонтурСвет: Васкелово"
               />
