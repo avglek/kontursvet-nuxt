@@ -62,7 +62,6 @@
       <div class="gallery">
         <figure v-for="photo in card?.photos">
           <NuxtImg
-            placeholder="blur"
             loading="lazy"
             :src="photo.src"
             :alt="photo.alt"

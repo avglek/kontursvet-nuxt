@@ -13,7 +13,6 @@ export default defineEventHandler(async (event) => {
   const isBotActive = String(config.botActive) === 'true';
   const isMailActive = String(config.smtpActive) === 'true';
 
-  console.log('active:', isBotActive, isMailActive);
   try {
     const data = await readMultipartFormData(event);
     if (!data) {

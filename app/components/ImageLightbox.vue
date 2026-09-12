@@ -10,12 +10,7 @@
         <button class="close-btn" @click="closeLightbox" aria-label="Закрыть">
           &times;
         </button>
-        <img
-          placeholder="blur"
-          :src="activeImageSrc"
-          alt="Полный размер"
-          class="fullsize-img"
-        />
+        <img :src="activeImageSrc" alt="Полный размер" class="fullsize-img" />
       </div>
     </Transition>
   </Teleport>
@@ -29,7 +24,6 @@ const { activeImageSrc, closeLightbox } = useLightbox();
 
 // Блокируем скролл страницы на мобильных и ПК при открытии
 watch(activeImageSrc, (newValue) => {
-  console.log('img:', activeImageSrc.value);
   if (typeof window !== 'undefined') {
     document.body.style.overflow = newValue ? 'hidden' : '';
   }
