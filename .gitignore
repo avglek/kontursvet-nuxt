@@ -30,3 +30,6 @@ config
 
 #for prod
 prod
+
+tmp
+old_src
