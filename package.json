@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare",
     "clear": "docker compose down && docker image prune -f -a",
     "prod": "docker compose up -d",
-    "save": "docker save kontursvet-nuxt-prod:latest|gzip > ./docker_img/kontursvet-nuxt-prod && docker save kontursvet-nginx-prod:latest|gzip > ./docker_img/kontursvet-nginx-prod ",
+    "save": "docker save kontursvet-nuxt-prod:latest|gzip > ./docker-img/kontursvet-nuxt-prod.tar.gz && docker save kontursvet-nginx-prod:latest|gzip > ./docker-img/kontursvet-nginx-prod.tar.gz ",
     "test": "vitest"
   },
   "dependencies": {

@@ -1,5 +1,5 @@
 <template>
-  <div class="overlay-loader">
+  <div :class="{ 'overlay-loader': true, 'overlay-loader-bg': isOverlay }">
     <div class="lds-spinner">
       <div></div>
       <div></div>
@@ -17,7 +17,14 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const props = defineProps<{
+  isOverlay?: {
+    type: boolean;
+    default: false;
+  };
+}>();
+</script>
 
 <style scoped>
 /* 1. Задний фон-подложка на весь экран */
@@ -29,7 +36,6 @@
   /* dynamic vh (dvh) идеально подходит для мобильных, 
      так как учитывает появление/скрытие адресной строки браузера */
   height: 100dvh;
-  background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачный белый фон */
 
   /* Центрирование спиннера */
   display: flex;
@@ -38,6 +44,9 @@
 
   /* Гарантирует, что лоадер будет поверх модалок, меню и шапки */
   z-index: 9999;
+}
+.overlay-loader-bg {
+  background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачный белый фон */
 }
 
 .lds-spinner,
